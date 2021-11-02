@@ -1,0 +1,101 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{A237ACAA-B69F-4257-AA59-FC6B6B79DB16}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>WindowsApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>NeuralNetwork</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="degisenKodlar.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Classes\ActivationHardLimitingTreshold.cs" />
+    <Compile Include="App_Classes\ActivationLeakyRELU.cs" />
+    <Compile Include="App_Classes\ActivationLinear.cs" />
+    <Compile Include="App_Classes\ActivationSigmoid.cs" />
+    <Compile Include="App_Classes\ActivationSoftMax.cs" />
+    <Compile Include="App_Classes\ActivationTANH.cs" />
+    <Compile Include="App_Classes\AllDataSet.cs" />
+    <Compile Include="App_Classes\DataRepresentor.cs" />
+    <Compile Include="App_Classes\DataSetBuilder.cs" />
+    <Compile Include="App_Classes\DataSetEncoders.cs" />
+    <Compile Include="App_Classes\DataSetLoader.cs" />
+    <Compile Include="App_Classes\GaussianNormalizer.cs" />
+    <Compile Include="App_Classes\IActivationFunction.cs" />
+    <Compile Include="App_Classes\INeuron.cs" />
+    <Compile Include="App_Classes\INormalizer.cs" />
+    <Compile Include="App_Classes\IOutputFilter.cs" />
+    <Compile Include="App_Classes\Layer.cs" />
+    <Compile Include="App_Classes\MinMaxNormalizer.cs" />
+    <Compile Include="App_Classes\NetworkReport.cs" />
+    <Compile Include="App_Classes\NeuralNetwork.cs" />
+    <Compile Include="App_Classes\NeuralNetworkError.cs" />
+    <Compile Include="App_Classes\Neuron.cs" />
+    <Compile Include="App_Classes\RoundFilter.cs" />
+    <Compile Include="App_Classes\SelectNormalizer.cs" />
+    <Compile Include="App_Classes\StepActivationFunction.cs" />
+    <Compile Include="App_Classes\Utils.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Properties\Settings.Designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>
